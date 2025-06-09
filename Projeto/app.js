@@ -23,9 +23,16 @@ function verificarChute() {
             exibirTextoNaTela('p', 'O número secreto é maior do que o chute');
         }
         tentativas++;
+        limparCampo();
+        document.getElementById('reiniciar').removeAttribute('disabled');
     }
 }
 
 function gerarNumeroAleatorio() {
     return parseInt(Math.random() * 10 + 1);
+}
+
+function limparCampo() {
+    let chute = document.querySelector('input');
+    chute.value = '';
 }
